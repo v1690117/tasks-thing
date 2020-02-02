@@ -1,0 +1,7 @@
+.classpath
+.project
+.vscode
+.idea
+*.iml
+target
+test.properties

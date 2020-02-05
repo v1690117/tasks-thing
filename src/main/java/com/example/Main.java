@@ -1,17 +1,23 @@
 package com.example;
 
-import com.example.domain.*;
-import com.example.service.*;
-import com.taskadapter.redmineapi.*;
-import org.springframework.context.annotation.*;
+import com.example.domain.Issue;
+import com.example.service.IssueService;
+import com.taskadapter.redmineapi.RedmineException;
+import org.gitlab4j.api.GitLabApiException;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 @ComponentScan
 @Configuration
 public class Main {
-    public static void main(String[] args) throws RedmineException {
+    public static void main(String[] args) throws RedmineException, GitLabApiException {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Main.class);
-        IssueService service = ctx.getBean("issueService", IssueService.class);
-        Issue issue = service.getByName("4364");
-        System.out.println(issue);
+        IssueService rmService = ctx.getBean("redmineIssueService", IssueService.class);
+        IssueService glService = ctx.getBean("gitlabIssueService", IssueService.class);
+        Issue rmIssue = rmService.getByName("4364");
+        Issue glIssue = glService.getByName("1");
+        System.out.println(rmIssue);
+        System.out.println(glIssue);
     }
 }

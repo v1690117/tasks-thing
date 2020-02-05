@@ -1,16 +1,17 @@
 package com.example.connector;
 
-import com.taskadapter.redmineapi.*;
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.context.annotation.*;
-import org.springframework.stereotype.*;
+import com.taskadapter.redmineapi.RedmineException;
+import com.taskadapter.redmineapi.RedmineManagerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Service;
 
 @PropertySource("classpath:test.properties") // todo fix temp decision
 @Service
-public class IssueManager {
+public class RedmineManager {
     private final com.taskadapter.redmineapi.IssueManager manager;
 
-    public IssueManager(@Value("${redmine.uri}") String uri, @Value("${redmine.key}") String accessKey) { // todo and this
+    public RedmineManager(@Value("${redmine.uri}") String uri, @Value("${redmine.key}") String accessKey) { // todo and this
         com.taskadapter.redmineapi.RedmineManager rmgr = RedmineManagerFactory.createWithApiKey(uri, accessKey);
         manager = rmgr.getIssueManager();
     }

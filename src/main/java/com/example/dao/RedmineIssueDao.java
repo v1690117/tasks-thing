@@ -1,15 +1,15 @@
 package com.example.dao;
 
-import com.example.connector.IssueManager;
-import com.example.domain.*;
-import com.taskadapter.redmineapi.*;
-import org.springframework.stereotype.*;
+import com.example.connector.RedmineManager;
+import com.example.domain.Issue;
+import com.taskadapter.redmineapi.RedmineException;
+import org.springframework.stereotype.Repository;
 
-@Repository("issueDao")
+@Repository("redmineIssueDao")
 public class RedmineIssueDao implements IssueDao {
-    private IssueManager manager;
+    private RedmineManager manager;
 
-    public RedmineIssueDao(IssueManager rm) {
+    public RedmineIssueDao(RedmineManager rm) {
         manager = rm;
     }
 

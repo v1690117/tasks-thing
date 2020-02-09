@@ -11,13 +11,14 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan
 @Configuration
 public class Main {
-    public static void main(String[] args) throws RedmineException, GitLabApiException {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Main.class);
-        IssueService rmService = ctx.getBean("redmineIssueService", IssueService.class);
-        IssueService glService = ctx.getBean("gitlabIssueService", IssueService.class);
-        Issue rmIssue = rmService.getByName("4364");
-        Issue glIssue = glService.getByName("1");
-        System.out.println(rmIssue);
-        System.out.println(glIssue);
+    public static void main(final String[] args) throws RedmineException, GitLabApiException {
+        try (AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Main.class)) {
+            IssueService rmService = ctx.getBean("redmineIssueService", IssueService.class);
+            IssueService glService = ctx.getBean("gitlabIssueService", IssueService.class);
+            Issue rmIssue = rmService.getByName("4364");
+            Issue glIssue = glService.getByName("1");
+            System.out.println(rmIssue);
+            System.out.println(glIssue);
+        }
     }
 }

@@ -11,11 +11,12 @@ import org.springframework.stereotype.Service;
 public class GitlabIssueService implements IssueService {
     private final IssueDao dao;
 
-    public GitlabIssueService(@Qualifier("gitlabIssueDao") IssueDao dao) {
+    public GitlabIssueService(@Qualifier("gitlabIssueDao") final IssueDao dao) {
         this.dao = dao;
     }
 
-    public Issue getByName(String name) throws RedmineException, GitLabApiException {
+    @Override
+    public Issue getByName(final String name) throws RedmineException, GitLabApiException {
         return dao.findByName(name);
     }
 }

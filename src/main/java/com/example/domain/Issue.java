@@ -5,15 +5,15 @@ public class Issue {
     private String title;
     private String assignee;
 
-    public void setId(String id) {
+    public void setId(final String id) {
         this.id = id;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(final String title) {
         this.title = title;
     }
 
-    public void setAssignee(String assignee) {
+    public void setAssignee(final String assignee) {
         this.assignee = assignee;
     }
 

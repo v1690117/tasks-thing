@@ -10,15 +10,16 @@ import org.springframework.stereotype.Repository;
 @PropertySource("classpath:test.properties") // todo fix temp decision
 @Repository("gitlabIssueDao")
 public class GitlabIssueDao implements IssueDao {
-    GitlabManager manager;
-    String project;
+    final private GitlabManager manager;
+    final private String project;
 
-    public GitlabIssueDao(GitlabManager gl, @Value("${gitlab.project}") String pr) { //todo instantiate for each project
+    public GitlabIssueDao(final GitlabManager gl, @Value("${gitlab.project}") final String pr) { //todo instantiate for each project
         manager = gl;
         project = pr;
     }
 
-    public Issue findByName(String name) throws GitLabApiException {
+    @Override
+    public Issue findByName(final String name) throws GitLabApiException {
         org.gitlab4j.api.models.Issue glIssue = manager.getIssueById(project, name);
         Issue issue = new Issue();
         issue.setId(String.valueOf(glIssue.getId()));

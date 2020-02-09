@@ -7,13 +7,14 @@ import org.springframework.stereotype.Repository;
 
 @Repository("redmineIssueDao")
 public class RedmineIssueDao implements IssueDao {
-    private RedmineManager manager;
+    private final RedmineManager manager;
 
-    public RedmineIssueDao(RedmineManager rm) {
+    public RedmineIssueDao(final RedmineManager rm) {
         manager = rm;
     }
 
-    public Issue findByName(String name) throws RedmineException {
+    @Override
+    public Issue findByName(final String name) throws RedmineException {
         com.taskadapter.redmineapi.bean.Issue rmIssue = manager.getIssueById(name);
         Issue issue = new Issue();
         issue.setId(String.valueOf(rmIssue.getId()));

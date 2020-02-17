@@ -1,3 +1,6 @@
+    
+![nullfree status](https://iwillfailyou.com/nullfree/v1690117/tasks-thing)  
+    
 # Task integration thing (to be named sometime)
 **WIP**    
 **Goal**: I'm trying to learn and use Spring because everybody wants you to know Spring. Spring, Spring, do you know Spring? Why? Spring is...

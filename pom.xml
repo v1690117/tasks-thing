@@ -36,6 +36,11 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.nikialeksey</groupId>
+                <artifactId>nullfree-maven-plugin</artifactId>
+                <version>1.4.2</version>
+            </plugin>
         </plugins>
     </build>
 </project>

@@ -8,5 +8,8 @@ cache:
     - $HOME/.m2
 
 script:
-  - mvn clean compile
+  - mvn clean verify
   - mvn nullfree:nullfree
+
+after_success:
+  - "bash <(curl -s https://codecov.io/bash)"

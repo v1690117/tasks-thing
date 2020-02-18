@@ -1,7 +1,7 @@
-    
-![nullfree status](https://iwillfailyou.com/nullfree/v1690117/tasks-thing) 
+![Java CI](https://github.com/v1690117/tasks-thing/workflows/Java%20CI/badge.svg?branch=master) 
 [![Build Status](https://travis-ci.com/v1690117/tasks-thing.svg?branch=master)](https://travis-ci.com/v1690117/tasks-thing.svg) 
 [![Test Coverage](https://img.shields.io/codecov/c/github/v1690117/tasks-thing.svg)](https://codecov.io/github/v1690117/tasks-thing?branch=master) 
+![nullfree status](https://iwillfailyou.com/nullfree/v1690117/tasks-thing)  
     
 # Task integration thing (to be named sometime)
 **WIP**    

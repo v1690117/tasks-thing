@@ -1,5 +1,6 @@
     
-![nullfree status](https://iwillfailyou.com/nullfree/v1690117/tasks-thing)  
+![nullfree status](https://iwillfailyou.com/nullfree/v1690117/tasks-thing) 
+[![Build Status](https://travis-ci.com/v1690117/tasks-thing.svg?branch=master)](https://travis-ci.org/v1690117/tasks-thing.svg) 
     
 # Task integration thing (to be named sometime)
 **WIP**    
